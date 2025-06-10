@@ -26,12 +26,13 @@
           <Key>
             <PropertyRef Name="LocationId" />
           </Key>
-          <Property Name="LocationId" Type="int" Nullable="false" />
+          <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LocationCity" Type="nchar" MaxLength="10" />
           <Property Name="LocationCountry" Type="nchar" MaxLength="10" />
-          <Property Name="LocationCapacity" Type="tinyint" />
-          <Property Name="DayNight" Type="nchar" MaxLength="10" />
+          <Property Name="LocationCapacity" Type="int" />
+          <Property Name="DayNight" Type="nchar" MaxLength="20" />
           <Property Name="GuideId" Type="int" />
+          <Property Name="LocationPrice" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -126,9 +127,10 @@
           <Property Name="LocationCity" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="LocationCountry" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="LocationCapacity" Type="Byte" />
-          <Property Name="DayNight" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DayNight" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="GuideId" Type="Int32" />
           <NavigationProperty Name="Guide" Relationship="Self.FK_Location_Guide" FromRole="Location" ToRole="Guide" />
+          <Property Name="LocationPrice" Type="Int32" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -231,6 +233,7 @@
           <EntitySetMapping Name="Location">
             <EntityTypeMapping TypeName="FormAppModel.Location">
               <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="LocationPrice" ColumnName="LocationPrice" />
                 <ScalarProperty Name="LocationId" ColumnName="LocationId" />
                 <ScalarProperty Name="LocationCity" ColumnName="LocationCity" />
                 <ScalarProperty Name="LocationCountry" ColumnName="LocationCountry" />
@@ -289,7 +292,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

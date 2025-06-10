@@ -20,6 +20,7 @@ namespace FormApp
         public Nullable<byte> LocationCapacity { get; set; }
         public string DayNight { get; set; }
         public Nullable<int> GuideId { get; set; }
+        public Nullable<int> LocationPrice { get; set; }
     
         public virtual Guide Guide { get; set; }
     }

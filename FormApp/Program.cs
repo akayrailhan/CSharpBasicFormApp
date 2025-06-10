@@ -16,7 +16,10 @@ namespace FormApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmStatistics());
         }
     }
 }
+
+// Note: The provided code block is XML and does not directly apply to the C# file. 
+// It should be added to the application's configuration file (App.config or Web.config) instead.
